@@ -1,0 +1,106 @@
+<style>
+    .order_form_area {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+.order_form_area h2 {
+  color: #333;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.order_form_area .form-control {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 15px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.order_form_area .form-control:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.order_form_area .btn-primary {
+  background-color: #45ff01;
+  border: none;
+  border-radius: 0;
+  padding: 15px 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+.order_form_area .btn-primary:hover {
+  background-color: #555;
+}
+
+.order_form_area .form-group {
+  margin-bottom: 25px;
+}
+
+/* Animation pour les champs de formulaire */
+.order_form_area .form-control {
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Style pour les options du select */
+.order_form_area select option {
+  padding: 15px;
+}
+
+/* Style pour le bouton au clic */
+.order_form_area .btn-primary:active {
+  transform: scale(0.9);
+  transition: all 0.1s ease;
+}
+</style>
+<section id="order" class="order_form_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <h2>ORDER YOUR COFFEE</h2>
+        <form action="order_process.php" method="POST">
+          <div class="form-group">
+            <input type="text" name="fullname" class="form-control" placeholder="Complet Name" required>
+          </div>
+          <div class="form-group">
+            <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <select name="product" class="form-control" required>
+              <option value="">-- Choisis ton produit --</option>
+              <option value="Nescafe Noir">Nescafe Noir - 500 FCFA</option>
+              <option value="Nescafe Gold">Nescafe Gold - 1200 FCFA</option>
+              <option value="Nido Milk">Nido Milk - 300 FCFA</option>
+              <option value="Tchai">Tchai - 200 FCFA</option>
+              <option value="Ndawara Tea">Ndawara Tea - 500 FCFA</option>
+              <option value="Folere">Folere - 400 FCFA</option>
+              <option value="Groundnut">Sweet Groundnut - 1000 FCFA</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="number" name="quantity" class="form-control" placeholder="Quantity" min="1" required>
+          </div>
+          <button type="submit" class="btn btn-primary">ORDER</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
